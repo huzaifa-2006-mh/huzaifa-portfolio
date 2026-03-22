@@ -63,16 +63,16 @@ const App = () => {
         <div className="container nav-container">
           <a href="#" className="logo">Muhammad Huzaifa.</a>
           
-          <ul className="nav-links">
-            <li><a href="#home" className="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+            <li><a href="#home" className="active" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
+            <li><a href="#skills" onClick={() => setMobileMenuOpen(false)}>Skills</a></li>
+            <li><a href="#projects" onClick={() => setMobileMenuOpen(false)}>Projects</a></li>
+            <li><a href="#experience" onClick={() => setMobileMenuOpen(false)}>Experience</a></li>
+            <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
           </ul>
 
-          <div style={{ display: 'none' }} className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <div className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </div>
         </div>
