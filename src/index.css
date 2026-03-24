@@ -99,7 +99,7 @@ html {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
@@ -217,7 +217,7 @@ header.scrolled {
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
   font-weight: 800;
   background: linear-gradient(90deg, #fff, var(--text-muted));
   -webkit-background-clip: text;
@@ -287,7 +287,7 @@ header.scrolled {
   font-weight: 600;
 }
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   line-height: 1.1;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -299,7 +299,7 @@ header.scrolled {
   -webkit-text-fill-color: transparent;
 }
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--text-muted);
   margin-bottom: 2.5rem;
   max-width: 500px;
@@ -345,11 +345,11 @@ header.scrolled {
   animation: float 6s infinite alternate ease-in-out;
 }
 .badge-1 {
-  bottom: 10%;
-  left: -10%;
+  bottom: 0%;
+  left: -5%;
 }
 .badge-2 {
-  top: 10%;
+  top: 0%;
   right: -5%;
   animation-delay: -3s;
 }
@@ -619,9 +619,6 @@ footer {
     text-align: center;
     gap: 3rem;
   }
-  .hero-text h1 {
-    font-size: 3.5rem;
-  }
   .hero-text p {
     margin: 0 auto 2.5rem;
   }
@@ -634,6 +631,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
   .nav-links {
     position: absolute;
     top: 100%;
@@ -647,30 +648,87 @@ footer {
     text-align: center;
     border-bottom: 1px solid var(--border-glass);
     display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
+
   .nav-links.active {
     display: flex;
   }
+
   .mobile-menu-btn {
     display: block;
     cursor: pointer;
   }
-  .hero-text h1 {
-    font-size: 2.8rem;
-  }
-  .section {
-    padding: 4rem 0;
-  }
+
   .hero {
     padding-top: 120px;
   }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 2.5rem auto 0;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .hero-img-wrapper {
+    max-width: 280px;
+    border-radius: 20px;
+  }
+
   .badge {
-    padding: 0.6rem 1rem;
+    position: static;
+    margin: 0.5rem 0;
+    animation: none;
+    width: 100%;
+    max-width: 280px;
+    justify-content: flex-start;
   }
-  .badge-icon {
-    font-size: 1.5rem;
+
+  .section {
+    padding: 4rem 0;
   }
-  .badge-text h4 {
-    font-size: 1rem;
+
+  .experience-timeline::before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 45px;
+  }
+
+  .timeline-dot {
+    left: 6px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    margin-bottom: 2rem;
+  }
+  
+  .glass-panel {
+    padding: 1.5rem;
   }
 }
